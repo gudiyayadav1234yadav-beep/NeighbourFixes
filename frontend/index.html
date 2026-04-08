@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeighbourFix — Local Services Near You</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="brand-icon">🏘️</span>
+        <span class="brand-name">NeighbourFix</span>
+      </div>
+      <div class="nav-links">
+        <a href="#services-section">Services</a>
+        <a href="#" onclick="openProviderModal()">Register as Provider</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Trusted Local Services,<br>Right in Your Neighbourhood</h1>
+      <p>Find verified plumbers, electricians, tutors, and more — booked in seconds.</p>
+      <div class="search-wrap">
+        <input type="text" id="search" placeholder="Search plumber, tutor, electrician..." oninput="filterServices()">
+        <button class="search-btn" onclick="filterServices()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="stat-item"><span id="s-providers">—</span><label>Providers</label></div>
+    <div class="stat-item"><span id="s-categories">—</span><label>Categories</label></div>
+    <div class="stat-item"><span id="s-bookings">—</span><label>Bookings Done</label></div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section" id="services-section">
+    <div class="container">
+      <h2 class="section-title">Browse Services</h2>
+      <div class="cats" id="cats"></div>
+      <div class="grid" id="grid">
+        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps">
+        <div class="step"><div class="step-icon">🔍</div><h3>Search</h3><p>Find the right service provider in your area</p></div>
+        <div class="step-arrow">→</div>
+        <div class="step"><div class="step-icon">📅</div><h3>Book</h3><p>Pick a date and time that works for you</p></div>
+        <div class="step-arrow">→</div>
+        <div class="step"><div class="step-icon">✅</div><h3>Done</h3><p>Provider arrives and gets the job done</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal" id="booking-modal">
+      <button class="modal-close" onclick="closeBookingModal()">×</button>
+      <h3 id="modal-title">Book a Service</h3>
+      <p id="modal-subtitle" class="modal-subtitle"></p>
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" id="b-name" placeholder="Full name">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone *</label>
+          <input type="tel" id="b-phone" placeholder="10-digit number">
+        </div>
+        <div class="form-group">
+          <label>Email (for confirmation)</label>
+          <input type="email" id="b-email" placeholder="you@email.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date *</label>
+          <input type="date" id="b-date">
+        </div>
+        <div class="form-group">
+          <label>Time Slot *</label>
+          <select id="b-time">
+            <option value="">Choose slot</option>
+            <option>9:00 AM – 11:00 AM</option>
+            <option>11:00 AM – 1:00 PM</option>
+            <option>2:00 PM – 4:00 PM</option>
+            <option>4:00 PM – 6:00 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Describe your problem</label>
+        <textarea id="b-note" placeholder="E.g. bathroom pipe is leaking..."></textarea>
+      </div>
+      <button class="btn-confirm" id="confirm-btn" onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+  </div>
+
+  <!-- PROVIDER REGISTER MODAL -->
+  <div class="modal-overlay" id="provider-overlay" onclick="closeProviderModal(event)">
+    <div class="modal" id="provider-modal">
+      <button class="modal-close" onclick="closeProviderModal()">×</button>
+      <h3>Register as a Provider</h3>
+      <p class="modal-subtitle">Join our network and get bookings from local customers</p>
+      <div class="coming-soon-box">
+        <div style="font-size:48px;margin-bottom:12px">🚧</div>
+        <h4>Provider registration coming soon!</h4>
+        <p>We're onboarding providers manually right now.<br>Call us at <strong>9876500000</strong> to get listed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 NeighbourFix. Serving Sonipat &amp; nearby areas.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

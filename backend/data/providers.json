@@ -1,0 +1,29 @@
+
+[
+  {
+    "id": 1,
+    "name": "Ravi Plumber",
+    "category": "Plumber",
+    "area": "Sonipat",
+    "rating": 4.5,
+    "reviews": 120,
+    "experience": "5 years",
+    "price": "₹300",
+    "availability": "Today",
+    "phone": "9876543210",
+    "emoji": "🔧"
+  },
+  {
+    "id": 2,
+    "name": "Amit Electrician",
+    "category": "Electrician",
+    "area": "Sonipat",
+    "rating": 4.2,
+    "reviews": 80,
+    "experience": "4 years",
+    "price": "₹400",
+    "availability": "Tomorrow",
+    "phone": "9876501234",
+    "emoji": "💡"
+  }
+]
