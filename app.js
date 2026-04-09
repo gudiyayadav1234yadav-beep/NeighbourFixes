@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";  // empty = same origin; change to "https://your-app.vercel.app" if needed
+const API = "";  // empty = same origin; change to "https://your-app.vercel.app" if needed
 
 let allProviders = [];
 let categories = ["All"];
